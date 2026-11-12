@@ -5,133 +5,426 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Gretel Tamara Ceja Tostado</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; margin: 0; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        header { display: flex; align-items: center; gap: 30px; border-bottom: 2px solid #2c3e50; padding-bottom: 20px; margin-bottom: 20px; }
+        /* --- ESTILOS GENERALES Y DE PANTALLA --- */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #2c3e50;
+            line-height: 1.55;
+            margin: 0;
+            padding: 25px;
+        }
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
         
-        .profile-pic { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #2c3e50; }
-        
-        h1 { margin: 0; color: #2c3e50; font-size: 2.5em; }
-        h2 { color: #2980b9; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 30px; }
-        .subtitle { font-size: 1.2em; font-weight: bold; color: #7f8c8d; }
-        .contact-info { margin-top: 10px; font-size: 0.95em; color: #555; }
-        
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 15px; }
-        .project-card { background: #f9f9f9; padding: 15px; border-left: 4px solid #2980b9; border-radius: 4px; }
-        .project-card h3 { margin-top: 0; color: #2c3e50; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
-
-        .badge-proceso { background-color: #e67e22; color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.65em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
-
-        .pdf-list { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
-        .pdf-link { display: inline-block; padding: 10px 15px; background-color: #ecf0f1; color: #2c3e50; text-decoration: none; border-radius: 5px; border: 1px solid #bdc3c7; font-weight: bold; transition: background 0.2s; }
-        .pdf-link:hover { background-color: #d5dbdb; }
-
-        /* Estilos de botones superiores */
-        .top-buttons { display: flex; flex-direction: column; gap: 10px; align-items: center; margin-bottom: 30px; }
-        
-        .btn-print { width: 250px; padding: 12px; background-color: #27ae60; color: white; text-align: center; border: none; border-radius: 5px; font-size: 1em; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+        /* Botones superiores (Solo en pantalla) */
+        .top-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        .btn-print {
+            padding: 12px 24px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
         .btn-print:hover { background-color: #2ecc71; }
         
-        .btn-info { width: 350px; padding: 12px; background-color: #3498db; color: white; text-align: center; border: none; border-radius: 5px; font-size: 1em; font-weight: bold; cursor: pointer; text-decoration: none; transition: background 0.3s; }
-        .btn-info:hover { background-color: #2980b9; }
+        .btn-info {
+            padding: 12px 24px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn-info:hover { background-color: #3498db; }
 
-        .print-only { display: none; }
+        /* Encabezado */
+        header {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 22px;
+            margin-bottom: 22px;
+        }
+        .profile-pic {
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2c3e50;
+            flex-shrink: 0;
+        }
+        h1 {
+            margin: 0 0 6px 0;
+            color: #1a252f;
+            font-size: 2.3em;
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            font-size: 1.15em;
+            font-weight: 700;
+            color: #2980b9;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-size: 0.95em;
+            color: #444;
+            line-height: 1.7;
+        }
+        .contact-info a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
 
-        /* Estilos para impresión */
+        /* Títulos de sección */
+        h2 {
+            color: #1a252f;
+            font-size: 1.35em;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 6px;
+            margin-top: 28px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Tarjetas de Proyectos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 12px;
+        }
+        .project-card {
+            background: #f8fafc;
+            padding: 15px 18px;
+            border-left: 4px solid #2980b9;
+            border-radius: 6px;
+            border-top: 1px solid #edf2f7;
+            border-right: 1px solid #edf2f7;
+            border-bottom: 1px solid #edf2f7;
+        }
+        .project-card h3 {
+            margin: 0 0 8px 0;
+            color: #2c3e50;
+            font-size: 1.08em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .project-card p {
+            margin: 0;
+            font-size: 0.92em;
+            color: #4a5568;
+        }
+
+        /* Etiqueta "En proceso" */
+        .badge-proceso {
+            background-color: #e67e22;
+            color: #ffffff;
+            padding: 3px 9px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Lista de descargas PDF (Solo en pantalla) */
+        .pdf-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .pdf-link {
+            display: block;
+            padding: 11px 14px;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            text-decoration: none;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-weight: 600;
+            font-size: 0.92em;
+            transition: all 0.2s;
+        }
+        .pdf-link:hover {
+            background-color: #e2e8f0;
+            border-color: #94a3b8;
+        }
+
+        /* Bloques de contexto detallado (Visible en impresión) */
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .context-item {
+            background: #fcfcfc;
+            border: 1px solid #e2e8f0;
+            border-left: 3px solid #2c3e50;
+            padding: 10px 14px;
+            border-radius: 4px;
+        }
+        .context-item h4 {
+            margin: 0 0 4px 0;
+            color: #1a252f;
+            font-size: 0.96em;
+        }
+        .context-item p {
+            margin: 0;
+            font-size: 0.86em;
+            color: #4a5568;
+        }
+        .cert-list {
+            margin: 8px 0 0 0;
+            padding-left: 20px;
+            font-size: 0.92em;
+        }
+        .cert-list li {
+            margin-bottom: 7px;
+        }
+
+        /* Ocultar sección exclusiva de impresión cuando se ve en web */
+        .print-only {
+            display: none;
+        }
+
+        /* Responsivo para celulares */
+        @media (max-width: 650px) {
+            header { flex-direction: column; text-align: center; }
+            .projects-grid, .context-grid { grid-template-columns: 1fr; }
+        }
+
+        /* --- ESTILOS EXCLUSIVOS PARA IMPRESIÓN / GUARDAR PDF --- */
         @media print {
-            body { background-color: #fff; padding: 0; }
-            .container { box-shadow: none; max-width: 100%; padding: 0; }
-            .no-print { display: none !important; }
-            .print-only { display: block !important; }
-            .project-card { page-break-inside: avoid; border-left: 2px solid #000; }
-            .badge-proceso { border: 1px solid #000; background-color: transparent; color: #000; }
-            h1, h2 { color: #000; }
+            @page {
+                size: letter;
+                margin: 12mm 14mm;
+            }
+            body {
+                background-color: #ffffff;
+                padding: 0;
+                margin: 0;
+                font-size: 11.5px;
+                line-height: 1.42;
+                color: #1a202c;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            header {
+                gap: 20px;
+                padding-bottom: 14px;
+                margin-bottom: 14px;
+                border-bottom: 2px solid #2c3e50;
+            }
+            .profile-pic {
+                width: 110px;
+                height: 110px;
+            }
+            h1 { font-size: 2em; }
+            h2 {
+                font-size: 1.2em;
+                margin-top: 16px;
+                margin-bottom: 8px;
+                padding-bottom: 3px;
+                color: #1a252f;
+                border-bottom: 1.5px solid #cbd5e1;
+                page-break-after: avoid;
+            }
+            .projects-grid, .context-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .project-card, .context-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                padding: 9px 12px;
+            }
+            .cert-list li {
+                margin-bottom: 5px;
+                page-break-inside: avoid;
+            }
+            .print-footer {
+                margin-top: 18px;
+                padding-top: 8px;
+                border-top: 1px solid #cbd5e1;
+                text-align: center;
+                font-size: 0.9em;
+                color: #4a5568;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Botones de acción (Solo visibles en la página web) -->
     <div class="top-buttons no-print">
         <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
         <a href="#certificados-seccion" class="btn-info">ℹ️ ¿No ves tu información? Haz clic aquí</a>
     </div>
 
     <div class="container">
+        <!-- ENCABEZADO -->
         <header>
             <img src="gretelfoto.png" alt="Gretel Tamara Ceja Tostado" class="profile-pic">
             <div>
                 <h1>Gretel Tamara Ceja Tostado</h1>
                 <div class="subtitle">Ingeniería en TIC | Especialidad en Análisis de Datos | Desarrollo de Software</div>
                 <div class="contact-info">
-                    📍 Puebla, México <br>
-                    🎓 Instituto Tecnológico de Puebla (Promedio: 92.50) <br>
-                    ✉️ greteltamaracejatostado7@gmail.com | 📱 +52 221 437 6369
+                    📍 Puebla, México &nbsp;|&nbsp; 🎓 Instituto Tecnológico de Puebla (TecNM) <br>
+                    ✉️ <a href="mailto:greteltamaracejatostado7@gmail.com">greteltamaracejatostado7@gmail.com</a> &nbsp;|&nbsp; 📱 +52 221 437 6369 <br>
+                    🌐 <strong>CV y Portafolio Web:</strong> <a href="https://cv-greteltamara.onrender.com" target="_blank">https://cv-greteltamara.onrender.com</a>
                 </div>
             </div>
         </header>
 
+        <!-- PERFIL PROFESIONAL -->
         <section>
             <h2>Perfil Profesional</h2>
-            <p>Estudiante de 7mo semestre con enfoque multidisciplinario. Experiencia en el análisis de datos, desarrollo de aplicaciones móviles, arquitectura de redes (Cisco Packet Tracer) y diseño de interfaces UI/UX. Proactiva, orientada a la resolución de problemas y con capacidad demostrada para liderar equipos de desarrollo bajo metodologías estructuradas.</p>
+            <p style="margin: 0;">Estudiante de 7mo semestre de Ingeniería en Tecnologías de la Información y Comunicaciones con perfil multidisciplinario. Cuento con experiencia práctica en análisis y arquitectura de bases de datos, desarrollo de software full-stack y móvil (Python, Kotlin, Java, VBA), ciberseguridad, configuración física y lógica de redes empresariales (Cisco), telecomunicaciones y diseño interactivo UI/UX y 3D. Destaco por mi liderazgo en equipos técnicos, enfoque metódico en la resolución de problemas y constante actualización tecnológica.</p>
         </section>
 
+        <!-- PROYECTOS DESTACADOS (Visible en web y en impresión) -->
         <section>
-            <h2>Proyectos Destacados</h2>
+            <h2>Proyectos de Software Destacados</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>El-inspector</h3>
-                    <p>Sistema web de auditoría ortográfica implementado con un backend en Python (Flask), base de reglas lógicas en Prolog y procesamiento con la API de Gemini. Desplegado en Render.</p>
+                    <p>Sistema web de auditoría ortográfica implementado con backend en Python (Flask), base de reglas lógicas en Prolog y procesamiento inteligente mediante la API de Gemini. Desplegado en Render.</p>
                 </div>
                 
                 <div class="project-card">
                     <h3>Grety (GretelMyInternet) <span class="badge-proceso">En proceso</span></h3>
-                    <p>Aplicación Android desarrollada en Kotlin enfocada en mensajería de malla (mesh) offline peer-to-peer utilizando tecnologías Wi-Fi Direct y Bluetooth.</p>
+                    <p>Aplicación móvil para Android desarrollada en Kotlin, enfocada en comunicación y mensajería en malla (mesh) offline peer-to-peer utilizando Wi-Fi Direct y Bluetooth sin depender de internet.</p>
                 </div>
 
                 <div class="project-card">
                     <h3>Sistema "Cecy Court Stylists"</h3>
-                    <p>Automatización de gestión de inventario, ventas y generación de recibos PDF mediante macros complejas y UserForms en Excel VBA.</p>
+                    <p>Sistema automatizado para control administrativo, gestión de inventarios, registro de ventas y generación dinámica de recibos en PDF mediante formularios avanzados (UserForms) y macros en Excel VBA.</p>
                 </div>
 
                 <div class="project-card">
-                    <h3>Portafolio ITP <span class="badge-proceso">En proceso</span></h3>
-                    <p>Desarrollo y despliegue de un sitio web personal estático para documentar proyectos, trayectoria académica e hitos profesionales desarrollados en el Instituto Tecnológico de Puebla.</p>
+                    <h3>Portafolio ITP | Digital Creator <span class="badge-proceso">En proceso</span></h3>
+                    <p>Plataforma web interactiva con diseño UI/UX moderno, integración multimedia y documentación técnica creada como hub central para exhibir proyectos e hitos de ingeniería en el ITP.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 1: DESCARGA DE PDFS (Se muestra en web, se oculta en impresión) -->
+        <!-- SECCIÓN WEB: DESCARGA DE PDFS (Se muestra en pantalla, se oculta al imprimir) -->
         <section id="certificados-seccion" class="no-print">
             <h2>Certificados y Evidencias (Documentos PDF)</h2>
-            <p><em>Haz clic en los enlaces para abrir o descargar los documentos:</em></p>
+            <p style="margin-top: 0; font-size: 0.92em; color: #555;"><em>Haz clic en cualquier documento para visualizar o descargar el archivo PDF original:</em></p>
             <div class="pdf-list">
-                <a href="1785_greteltamara.pdf" target="_blank" class="pdf-link">📄 Copilot: domina la IA en Microsoft 365 (Santander OA)</a>
-                <a href="1986_greteltamara.pdf" target="_blank" class="pdf-link">📄 Cursor con Python: desarrollo inteligente (Santander OA)</a>
-                <a href="Actividades que he realizado.pdf" target="_blank" class="pdf-link">📄 Evidencia: Portafolio de Actividades y Proyectos</a>
-                <a href="Coursera AQJ4D6DO1HAW.pdf" target="_blank" class="pdf-link">📄 Coursera: Play It Safe: Manage Security Risks</a>
-                <a href="Coursera TJ9T2Y7VO825.pdf" target="_blank" class="pdf-link">📄 Coursera: Foundations of Cybersecurity</a>
-                <a href="Coursera V37XTYDYSPLF.pdf" target="_blank" class="pdf-link">📄 Coursera: Connect and Protect: Networks and Network Security</a>
+                <a href="Coursera TJ9T2Y7VO825.pdf" target="_blank" class="pdf-link">📄 Google Cybersecurity: Foundations of Cybersecurity</a>
+                <a href="Coursera AQJ4D6DO1HAW.pdf" target="_blank" class="pdf-link">📄 Google Cybersecurity: Play It Safe: Manage Security Risks</a>
+                <a href="Coursera V37XTYDYSPLF.pdf" target="_blank" class="pdf-link">📄 Google Cybersecurity: Networks and Network Security</a>
+                <a href="1785_greteltamara.pdf" target="_blank" class="pdf-link">📄 Santander OA: Copilot, domina la IA en Microsoft 365</a>
+                <a href="1986_greteltamara.pdf" target="_blank" class="pdf-link">📄 Santander OA: Cursor con Python, desarrollo con IA</a>
+                <a href="Actividades que he realizado.pdf" target="_blank" class="pdf-link">📄 Portafolio Completo: Actividades y Prácticas de Ingeniería</a>
             </div>
         </section>
 
-        <!-- SECCIÓN 2: CONTEXTO EN TEXTO EXPANDIDO (Se oculta en web, se muestra en impresión) -->
+        <!-- SECCIÓN IMPRESIÓN 1: CONTEXTO DE EXPERIENCIA PRÁCTICA (Se oculta en web, aparece en el PDF impreso) -->
         <section class="print-only">
-            <h2>Contexto de Certificaciones y Formación Continua</h2>
-            <ul>
-                <li><strong>Certificado Profesional en Ciberseguridad</strong> - Google (A través de Coursera). Incluye módulos acreditados como: <em>Play It Safe: Manage Security Risks</em>, <em>Foundations of Cybersecurity</em> y <em>Connect and Protect: Networks and Network Security</em>.</li>
-                <li><strong>Inteligencia Artificial y Desarrollo</strong> - Certificaciones avaladas por Santander Open Academy: <em>Copilot: domina la IA en Microsoft 365</em> y <em>Cursor con Python: desarrollo inteligente con IA</em>.</li>
-                <li><strong>Diplomado en Realidad Aumentada con Dispositivos Móviles</strong> - Marzo 2024.</li>
-                <li><strong>Diplomado en Ciberseguridad</strong> - Septiembre 2023.</li>
-                <li><strong>Certificaciones Técnicas Adicionales:</strong> Dominio de Python (Nivel Principiante por Python Institute), y nivel básico de Inglés (Inglés a tu alcance).</li>
-                <li><strong>Participación Académica Destacada:</strong> Segundo lugar en el proyecto "Halloween Stock" (Electriciencia 2025) y reconocimiento por el proyecto "Inventia" en la Exposición de Proyectos TIC's 2025.</li>
+            <h2>Experiencia Práctica y Desarrollo en Ingeniería (Contexto Técnico)</h2>
+            <div class="context-grid">
+                <div class="context-item">
+                    <h4>Ciberseguridad y Simulación Concurrente (Python)</h4>
+                    <p>Desarrollo del software "Transporte de Cargas México" con <em>threading</em>, CustomTkinter y Matplotlib para recrear de forma controlada ataques DDoS / inyección de pop-ups, evaluando la seguridad y validación en interfaces gráficas.</p>
+                </div>
+                <div class="context-item">
+                    <h4>Infraestructura de Redes y Seguridad (Cisco)</h4>
+                    <p>Configuración física de Switches y Routers Cisco en racks de telecomunicaciones y diseño de topologías en Packet Tracer. Administración de capas 2 y 3 (modelo OSI), segmentación de tráfico y seguridad perimetral en puertos.</p>
+                </div>
+                <div class="context-item">
+                    <h4>Arquitectura de Bases de Datos (Modelo ERP)</h4>
+                    <p>Diseño conceptual y lógico normalizado (Modelo Entidad-Relación) con integridad referencial avanzada para gestionar ciclos de venta, postventa/garantías, inventarios, logística de proveedores, sucursales y clientes.</p>
+                </div>
+                <div class="context-item">
+                    <h4>Telecomunicaciones, Fibra Óptica y Enlaces Satelitales</h4>
+                    <p>Análisis de propagación en fibra óptica y modulación binaria con osciloscopio digital y generador de funciones. Orientación en campo de antenas satelitales (downlink Eutelsat 117A/117B) con Sat Finder y telemetría RF.</p>
+                </div>
+                <div class="context-item">
+                    <h4>Electrónica Digital (TTL) y Control Analógico</h4>
+                    <p>Implementación física en protoboard de sistemas basados en Álgebra Booleana empleando circuitos integrados TTL (compuertas 7408 AND, 7400 NAND, 7432 OR, 7402 NOR) y regulación analógica mediante divisores de voltaje.</p>
+                </div>
+                <div class="context-item">
+                    <h4>Modelado 3D (Blender), Realidad Aumentada y Costos</h4>
+                    <p>Modelado 3D detallado de arquitectura interna de hardware (Motherboard) en Blender, despliegue de activos inmersivos por código QR en EasyAR, y modelado financiero de contabilidad de costos por procesos industriales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN IMPRESIÓN 2: CONTEXTO DE CERTIFICADOS Y PREMIOS (Se oculta en web, aparece en el PDF impreso) -->
+        <section class="print-only">
+            <h2>Contexto de Certificaciones, Reconocimientos e Idiomas</h2>
+            <ul class="cert-list">
+                <li><strong>Certificado Profesional en Ciberseguridad de Google (Coursera, 2026):</strong> Acreditación de los módulos <em>Foundations of Cybersecurity</em> (ID: TJ9T2Y7VO825), <em>Play It Safe: Manage Security Risks</em> (ID: AQJ4D6D01HAW) y <em>Connect and Protect: Networks and Network Security</em> (ID: V37XTYDYSPLF).</li>
+                <li><strong>Especialización en Inteligencia Artificial y Desarrollo (Santander Open Academy, Marzo 2026):</strong> Certificados en <em>Cursor con Python: desarrollo inteligente con IA</em> (Serie: OA-2026-0329002414465) y <em>Copilot: domina la IA en Microsoft 365</em> (Serie: OA-2026-0326002403041).</li>
+                <li><strong>Programación y Talleres Tecnológicos (TecNM / ITP / Python Institute):</strong> Curso <em>Fundamentos de Python 1</em> (Python Institute, 30 hrs); Diploma en <em>Realidad Aumentada con Dispositivos Móviles</em> (JITI, Marzo 2024) y Diploma en <em>Ciberseguridad</em> (JITI, Septiembre 2023).</li>
+                <li><strong>Premios y Reconocimientos Destacados:</strong> <strong>2.º Lugar</strong> con el proyecto <em>"Halloween Stock"</em> en la Jornada Estatal del Conocimiento <em>Electriciencia 2025</em> (Octubre 2025); Reconocimiento por participación destacada con el proyecto <em>"Inventia"</em> en la <em>Exposición de Proyectos de TIC's 2025</em> del ITP (Diciembre 2025); y 2.º Lugar en Aprovechamiento Escolar (2016).</li>
+                <li><strong>Acreditación del Idioma Inglés:</strong> Constancia Oficial de Acreditación de Competencias de Comunicación Oral y Escrita en Inglés emitida por el Instituto Tecnológico de Puebla (Agosto 2025, Oficio No. 221976) y Certificación <em>Basic Level</em> por <em>Inglés a tu Alcance</em> con registro ante la STPS (Julio 2019).</li>
             </ul>
         </section>
 
+        <!-- HERRAMIENTAS Y TECNOLOGÍAS -->
         <section>
             <h2>Herramientas y Tecnologías</h2>
-            <p><strong>Lenguajes y Frameworks:</strong> Java, Kotlin (Android Studio), Python, HTML/CSS/JS, Excel VBA, Prolog.<br>
-            <strong>Software e Infraestructura:</strong> Cisco Packet Tracer, VirtualBox (Kali Linux, Docker), Blender, Power BI, Git.</p>
+            <p style="margin: 0; font-size: 0.94em;">
+                <strong>Lenguajes y Desarrollo:</strong> Python (Flask, CustomTkinter, Matplotlib), Kotlin y Java (Android Studio), HTML5/CSS3/JS, Excel VBA, Prolog, SQL.<br>
+                <strong>Infraestructura, Redes y Diseño:</strong> Switches y Routers Cisco, Cisco Packet Tracer, VirtualBox (Kali Linux, Docker), Git/GitHub, Render, Blender 3D, EasyAR, Power BI, Cursor, Instrumentación de Laboratorio (Osciloscopio Digital y Sat Finder).
+            </p>
         </section>
+
+        <!-- PIE DE PÁGINA EXCLUSIVO PARA EL PDF IMPRESO -->
+        <div class="print-only print-footer">
+            Para consultar y descargar los certificados originales en PDF, visita la versión interactiva de este CV en: <strong>https://cv-greteltamara.onrender.com</strong>
+        </div>
     </div>
 
 </body>
