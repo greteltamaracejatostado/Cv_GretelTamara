@@ -9,7 +9,6 @@
         .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         header { display: flex; align-items: center; gap: 30px; border-bottom: 2px solid #2c3e50; padding-bottom: 20px; margin-bottom: 20px; }
         
-        /* Tu foto de perfil configurada para 'gretelfoto.png' */
         .profile-pic { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #2c3e50; }
         
         h1 { margin: 0; color: #2c3e50; font-size: 2.5em; }
@@ -21,19 +20,24 @@
         .project-card { background: #f9f9f9; padding: 15px; border-left: 4px solid #2980b9; border-radius: 4px; }
         .project-card h3 { margin-top: 0; color: #2c3e50; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 
-        /* Diseño del botón naranja "En proceso" */
         .badge-proceso { background-color: #e67e22; color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.65em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* Estilos para los botones de descarga de PDF */
         .pdf-list { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
         .pdf-link { display: inline-block; padding: 10px 15px; background-color: #ecf0f1; color: #2c3e50; text-decoration: none; border-radius: 5px; border: 1px solid #bdc3c7; font-weight: bold; transition: background 0.2s; }
         .pdf-link:hover { background-color: #d5dbdb; }
 
-        /* Botón de impresión general */
-        .btn-print { display: block; width: 200px; margin: 0 auto 30px auto; padding: 12px; background-color: #27ae60; color: white; text-align: center; border: none; border-radius: 5px; font-size: 1em; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+        /* Estilos de botones superiores */
+        .top-buttons { display: flex; flex-direction: column; gap: 10px; align-items: center; margin-bottom: 30px; }
+        
+        .btn-print { width: 250px; padding: 12px; background-color: #27ae60; color: white; text-align: center; border: none; border-radius: 5px; font-size: 1em; font-weight: bold; cursor: pointer; transition: background 0.3s; }
         .btn-print:hover { background-color: #2ecc71; }
+        
+        .btn-info { width: 350px; padding: 12px; background-color: #3498db; color: white; text-align: center; border: none; border-radius: 5px; font-size: 1em; font-weight: bold; cursor: pointer; text-decoration: none; transition: background 0.3s; }
+        .btn-info:hover { background-color: #2980b9; }
+
         .print-only { display: none; }
 
+        /* Estilos para impresión */
         @media print {
             body { background-color: #fff; padding: 0; }
             .container { box-shadow: none; max-width: 100%; padding: 0; }
@@ -47,7 +51,10 @@
 </head>
 <body>
 
-    <button class="btn-print no-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+    <div class="top-buttons no-print">
+        <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+        <a href="#certificados-seccion" class="btn-info">ℹ️ ¿No ves tu información? Haz clic aquí</a>
+    </div>
 
     <div class="container">
         <header>
@@ -94,27 +101,29 @@
         </section>
 
         <!-- SECCIÓN 1: DESCARGA DE PDFS (Se muestra en web, se oculta en impresión) -->
-        <section class="no-print">
+        <section id="certificados-seccion" class="no-print">
             <h2>Certificados y Evidencias (Documentos PDF)</h2>
             <p><em>Haz clic en los enlaces para abrir o descargar los documentos:</em></p>
             <div class="pdf-list">
-                <a href="1785_greteltamara.pdf" target="_blank" class="pdf-link">📄 Certificado 1 (1785_greteltamara.pdf)</a>
-                <a href="1986_greteltamara.pdf" target="_blank" class="pdf-link">📄 Certificado 2 (1986_greteltamara.pdf)</a>
-                <a href="Actividades que he realizado.pdf" target="_blank" class="pdf-link">📄 Evidencia: Actividades que he realizado.pdf</a>
-                <a href="Coursera AQJ4D6DO1HAW.pdf" target="_blank" class="pdf-link">📄 Coursera (AQJ4D6DO1HAW.pdf)</a>
-                <a href="Coursera TJ9T2Y7VO825.pdf" target="_blank" class="pdf-link">📄 Coursera (TJ9T2Y7VO825.pdf)</a>
-                <a href="Coursera V37XTYDYSPLF.pdf" target="_blank" class="pdf-link">📄 Coursera (V37XTYDYSPLF.pdf)</a>
+                <a href="1785_greteltamara.pdf" target="_blank" class="pdf-link">📄 Copilot: domina la IA en Microsoft 365 (Santander OA)</a>
+                <a href="1986_greteltamara.pdf" target="_blank" class="pdf-link">📄 Cursor con Python: desarrollo inteligente (Santander OA)</a>
+                <a href="Actividades que he realizado.pdf" target="_blank" class="pdf-link">📄 Evidencia: Portafolio de Actividades y Proyectos</a>
+                <a href="Coursera AQJ4D6DO1HAW.pdf" target="_blank" class="pdf-link">📄 Coursera: Play It Safe: Manage Security Risks</a>
+                <a href="Coursera TJ9T2Y7VO825.pdf" target="_blank" class="pdf-link">📄 Coursera: Foundations of Cybersecurity</a>
+                <a href="Coursera V37XTYDYSPLF.pdf" target="_blank" class="pdf-link">📄 Coursera: Connect and Protect: Networks and Network Security</a>
             </div>
         </section>
 
-        <!-- SECCIÓN 2: CONTEXTO EN TEXTO (Se oculta en web, se muestra en impresión) -->
+        <!-- SECCIÓN 2: CONTEXTO EN TEXTO EXPANDIDO (Se oculta en web, se muestra en impresión) -->
         <section class="print-only">
             <h2>Contexto de Certificaciones y Formación Continua</h2>
             <ul>
-                <li><strong>Certificado Profesional en Ciberseguridad</strong> - Google (A través de Coursera).</li>
+                <li><strong>Certificado Profesional en Ciberseguridad</strong> - Google (A través de Coursera). Incluye módulos acreditados como: <em>Play It Safe: Manage Security Risks</em>, <em>Foundations of Cybersecurity</em> y <em>Connect and Protect: Networks and Network Security</em>.</li>
+                <li><strong>Inteligencia Artificial y Desarrollo</strong> - Certificaciones avaladas por Santander Open Academy: <em>Copilot: domina la IA en Microsoft 365</em> y <em>Cursor con Python: desarrollo inteligente con IA</em>.</li>
                 <li><strong>Diplomado en Realidad Aumentada con Dispositivos Móviles</strong> - Marzo 2024.</li>
                 <li><strong>Diplomado en Ciberseguridad</strong> - Septiembre 2023.</li>
-                <li><strong>Certificaciones Técnicas Adicionales:</strong> Dominio de Python, Inteligencia Artificial y fundamentos técnicos sólidos.</li>
+                <li><strong>Certificaciones Técnicas Adicionales:</strong> Dominio de Python (Nivel Principiante por Python Institute), y nivel básico de Inglés (Inglés a tu alcance).</li>
+                <li><strong>Participación Académica Destacada:</strong> Segundo lugar en el proyecto "Halloween Stock" (Electriciencia 2025) y reconocimiento por el proyecto "Inventia" en la Exposición de Proyectos TIC's 2025.</li>
             </ul>
         </section>
 
