@@ -26,16 +26,14 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
         
-        /* Botones superiores (Solo en pantalla) */
+        /* Botón superior de impresión (Solo en pantalla) */
         .top-buttons {
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
             justify-content: center;
             margin-bottom: 25px;
         }
         .btn-print {
-            padding: 12px 24px;
+            padding: 12px 28px;
             background-color: #27ae60;
             color: white;
             border: none;
@@ -46,20 +44,6 @@
             transition: background 0.3s;
         }
         .btn-print:hover { background-color: #2ecc71; }
-        
-        .btn-info {
-            padding: 12px 24px;
-            background-color: #2980b9;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-        .btn-info:hover { background-color: #3498db; }
 
         /* Encabezado */
         header {
@@ -107,7 +91,7 @@
         /* Títulos de sección */
         h2 {
             color: #1a252f;
-            font-size: 1.35em;
+            font-size: 1.3em;
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 6px;
             margin-top: 28px;
@@ -147,6 +131,17 @@
             font-size: 0.92em;
             color: #4a5568;
         }
+        .project-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.86em;
+            color: #2980b9;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .project-link:hover {
+            text-decoration: underline;
+        }
 
         /* Etiqueta "En proceso" */
         .badge-proceso {
@@ -158,6 +153,31 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        /* Bloques de experiencia práctica (Visibles en web y en PDF) */
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-top: 12px;
+        }
+        .context-item {
+            background: #fcfcfc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #2c3e50;
+            padding: 12px 15px;
+            border-radius: 6px;
+        }
+        .context-item h4 {
+            margin: 0 0 5px 0;
+            color: #1a252f;
+            font-size: 0.98em;
+        }
+        .context-item p {
+            margin: 0;
+            font-size: 0.88em;
+            color: #4a5568;
         }
 
         /* Lista de descargas PDF (Solo en pantalla) */
@@ -184,30 +204,7 @@
             border-color: #94a3b8;
         }
 
-        /* Bloques de contexto detallado (Visible en impresión) */
-        .context-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 10px;
-        }
-        .context-item {
-            background: #fcfcfc;
-            border: 1px solid #e2e8f0;
-            border-left: 3px solid #2c3e50;
-            padding: 10px 14px;
-            border-radius: 4px;
-        }
-        .context-item h4 {
-            margin: 0 0 4px 0;
-            color: #1a252f;
-            font-size: 0.96em;
-        }
-        .context-item p {
-            margin: 0;
-            font-size: 0.86em;
-            color: #4a5568;
-        }
+        /* Lista de contexto de certificaciones (Solo en impresión) */
         .cert-list {
             margin: 8px 0 0 0;
             padding-left: 20px;
@@ -217,7 +214,6 @@
             margin-bottom: 7px;
         }
 
-        /* Ocultar sección exclusiva de impresión cuando se ve en web */
         .print-only {
             display: none;
         }
@@ -238,8 +234,8 @@
                 background-color: #ffffff;
                 padding: 0;
                 margin: 0;
-                font-size: 11.5px;
-                line-height: 1.42;
+                font-size: 11.2px;
+                line-height: 1.4;
                 color: #1a202c;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
@@ -258,18 +254,18 @@
             }
             header {
                 gap: 20px;
-                padding-bottom: 14px;
-                margin-bottom: 14px;
+                padding-bottom: 12px;
+                margin-bottom: 12px;
                 border-bottom: 2px solid #2c3e50;
             }
             .profile-pic {
-                width: 110px;
-                height: 110px;
+                width: 105px;
+                height: 105px;
             }
-            h1 { font-size: 2em; }
+            h1 { font-size: 1.95em; }
             h2 {
-                font-size: 1.2em;
-                margin-top: 16px;
+                font-size: 1.15em;
+                margin-top: 14px;
                 margin-bottom: 8px;
                 padding-bottom: 3px;
                 color: #1a252f;
@@ -278,20 +274,20 @@
             }
             .projects-grid, .context-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
+                gap: 9px;
             }
             .project-card, .context-item {
                 page-break-inside: avoid;
                 break-inside: avoid;
-                padding: 9px 12px;
+                padding: 8px 11px;
             }
             .cert-list li {
                 margin-bottom: 5px;
                 page-break-inside: avoid;
             }
             .print-footer {
-                margin-top: 18px;
-                padding-top: 8px;
+                margin-top: 14px;
+                padding-top: 6px;
                 border-top: 1px solid #cbd5e1;
                 text-align: center;
                 font-size: 0.9em;
@@ -302,10 +298,9 @@
 </head>
 <body>
 
-    <!-- Botones de acción (Solo visibles en la página web) -->
+    <!-- Botón de impresión (Solo visible en la página web) -->
     <div class="top-buttons no-print">
         <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
-        <a href="#certificados-seccion" class="btn-info">ℹ️ ¿No ves tu información? Haz clic aquí</a>
     </div>
 
     <div class="container">
@@ -318,7 +313,7 @@
                 <div class="contact-info">
                     📍 Puebla, México &nbsp;|&nbsp; 🎓 Instituto Tecnológico de Puebla (TecNM) <br>
                     ✉️ <a href="mailto:greteltamaracejatostado7@gmail.com">greteltamaracejatostado7@gmail.com</a> &nbsp;|&nbsp; 📱 +52 221 437 6369 <br>
-                    🌐 <strong>CV y Portafolio Web:</strong> <a href="https://cv-greteltamara.onrender.com" target="_blank">https://cv-greteltamara.onrender.com</a>
+                    🌐 <strong>CV Web:</strong> <a href="https://cv-greteltamara.onrender.com" target="_blank">https://cv-greteltamara.onrender.com</a>
                 </div>
             </div>
         </header>
@@ -326,21 +321,27 @@
         <!-- PERFIL PROFESIONAL -->
         <section>
             <h2>Perfil Profesional</h2>
-            <p style="margin: 0;">Estudiante de 7mo semestre de Ingeniería en Tecnologías de la Información y Comunicaciones con perfil multidisciplinario. Cuento con experiencia práctica en análisis y arquitectura de bases de datos, desarrollo de software full-stack y móvil (Python, Kotlin, Java, VBA), ciberseguridad, configuración física y lógica de redes empresariales (Cisco), telecomunicaciones y diseño interactivo UI/UX y 3D. Destaco por mi liderazgo en equipos técnicos, enfoque metódico en la resolución de problemas y constante actualización tecnológica.</p>
+            <p style="margin: 0;">Estudiante de 7mo semestre de Ingeniería en Tecnologías de la Información y Comunicaciones con perfil multidisciplinario. Cuento con experiencia práctica en análisis y arquitectura de bases de datos, desarrollo de software full-stack y móvil (C#, ASP.NET Core, Python, Kotlin, Java, VBA), ciberseguridad, configuración física y lógica de redes empresariales (Cisco), telecomunicaciones y diseño interactivo UI/UX y 3D. Destaco por mi liderazgo en equipos técnicos, enfoque metódico en la resolución de problemas y constante actualización tecnológica.</p>
         </section>
 
-        <!-- PROYECTOS DESTACADOS (Visible en web y en impresión) -->
+        <!-- PROYECTOS DE SOFTWARE DESTACADOS (Visible en web y en impresión) -->
         <section>
             <h2>Proyectos de Software Destacados</h2>
             <div class="projects-grid">
                 <div class="project-card">
+                    <h3>Proyecto Stratos</h3>
+                    <p>Plataforma web de evaluación psicométrica DISC desarrollada en C# y ASP.NET Core con Razor Pages e integración de base de datos en Supabase.</p>
+                    <a href="https://stratos-u8ee.onrender.com" target="_blank" class="project-link">🔗 https://stratos-u8ee.onrender.com</a>
+                </div>
+
+                <div class="project-card">
                     <h3>El-inspector</h3>
                     <p>Sistema web de auditoría ortográfica implementado con backend en Python (Flask), base de reglas lógicas en Prolog y procesamiento inteligente mediante la API de Gemini. Desplegado en Render.</p>
                 </div>
-                
+
                 <div class="project-card">
-                    <h3>Grety (GretelMyInternet) <span class="badge-proceso">En proceso</span></h3>
-                    <p>Aplicación móvil para Android desarrollada en Kotlin, enfocada en comunicación y mensajería en malla (mesh) offline peer-to-peer utilizando Wi-Fi Direct y Bluetooth sin depender de internet.</p>
+                    <h3>Portafolio ITP | Digital Creator</h3>
+                    <p>Plataforma web interactiva con diseño UI/UX moderno, integración multimedia y documentación técnica creada como hub central para exhibir proyectos e hitos de ingeniería en el ITP.</p>
                 </div>
 
                 <div class="project-card">
@@ -349,8 +350,36 @@
                 </div>
 
                 <div class="project-card">
-                    <h3>Portafolio ITP | Digital Creator <span class="badge-proceso">En proceso</span></h3>
-                    <p>Plataforma web interactiva con diseño UI/UX moderno, integración multimedia y documentación técnica creada como hub central para exhibir proyectos e hitos de ingeniería en el ITP.</p>
+                    <h3>Transporte de Cargas México (DDoS Sim)</h3>
+                    <p>Software de cotización logística desarrollado en Python con <em>threading</em>, CustomTkinter y Matplotlib para recrear de forma controlada ataques DDoS e inyección de pop-ups, evaluando la seguridad en interfaces.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Grety (GretelMyInternet) <span class="badge-proceso">En proceso</span></h3>
+                    <p>Aplicación móvil para Android desarrollada en Kotlin, enfocada en comunicación y mensajería en malla (mesh) offline peer-to-peer utilizando Wi-Fi Direct y Bluetooth sin depender de internet.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCIA PRÁCTICA Y LABORATORIOS DE INGENIERÍA (Visible tanto en la página web como en el PDF impreso) -->
+        <section>
+            <h2>Experiencia Práctica y Desarrollo en Ingeniería</h2>
+            <div class="context-grid">
+                <div class="context-item">
+                    <h4>Infraestructura de Redes y Seguridad (Cisco)</h4>
+                    <p>Configuración física de Switches y Routers Cisco en racks de telecomunicaciones y diseño de topologías en Packet Tracer. Administración de capas 2 y 3 (modelo OSI), segmentación de tráfico y seguridad perimetral en puertos.</p>
+                </div>
+                <div class="context-item">
+                    <h4>Arquitectura de Bases de Datos (Modelo ERP)</h4>
+                    <p>Diseño conceptual y lógico normalizado (Modelo Entidad-Relación) con integridad referencial avanzada para gestionar ciclos de venta, postventa/garantías, inventarios, logística de proveedores, sucursales y clientes.</p>
+                </div>
+                <div class="context-item">
+                    <h4>Telecomunicaciones, Fibra Óptica y Enlaces Satelitales</h4>
+                    <p>Análisis de propagación en fibra óptica y modulación binaria con osciloscopio digital y generador de funciones. Orientación en campo de antenas satelitales (downlink Eutelsat 117A/117B) con Sat Finder y telemetría RF.</p>
+                </div>
+                <div class="context-item">
+                    <h4>Electrónica Digital (TTL), Modelado 3D y RA</h4>
+                    <p>Ensamble en protoboard de sistemas de Álgebra Booleana con circuitos TTL (7408, 7400, 7432, 7402) y divisores de voltaje. Modelado 3D de hardware (Motherboard) en Blender y despliegue de Realidad Aumentada con QR en EasyAR.</p>
                 </div>
             </div>
         </section>
@@ -369,38 +398,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN IMPRESIÓN 1: CONTEXTO DE EXPERIENCIA PRÁCTICA (Se oculta en web, aparece en el PDF impreso) -->
-        <section class="print-only">
-            <h2>Experiencia Práctica y Desarrollo en Ingeniería (Contexto Técnico)</h2>
-            <div class="context-grid">
-                <div class="context-item">
-                    <h4>Ciberseguridad y Simulación Concurrente (Python)</h4>
-                    <p>Desarrollo del software "Transporte de Cargas México" con <em>threading</em>, CustomTkinter y Matplotlib para recrear de forma controlada ataques DDoS / inyección de pop-ups, evaluando la seguridad y validación en interfaces gráficas.</p>
-                </div>
-                <div class="context-item">
-                    <h4>Infraestructura de Redes y Seguridad (Cisco)</h4>
-                    <p>Configuración física de Switches y Routers Cisco en racks de telecomunicaciones y diseño de topologías en Packet Tracer. Administración de capas 2 y 3 (modelo OSI), segmentación de tráfico y seguridad perimetral en puertos.</p>
-                </div>
-                <div class="context-item">
-                    <h4>Arquitectura de Bases de Datos (Modelo ERP)</h4>
-                    <p>Diseño conceptual y lógico normalizado (Modelo Entidad-Relación) con integridad referencial avanzada para gestionar ciclos de venta, postventa/garantías, inventarios, logística de proveedores, sucursales y clientes.</p>
-                </div>
-                <div class="context-item">
-                    <h4>Telecomunicaciones, Fibra Óptica y Enlaces Satelitales</h4>
-                    <p>Análisis de propagación en fibra óptica y modulación binaria con osciloscopio digital y generador de funciones. Orientación en campo de antenas satelitales (downlink Eutelsat 117A/117B) con Sat Finder y telemetría RF.</p>
-                </div>
-                <div class="context-item">
-                    <h4>Electrónica Digital (TTL) y Control Analógico</h4>
-                    <p>Implementación física en protoboard de sistemas basados en Álgebra Booleana empleando circuitos integrados TTL (compuertas 7408 AND, 7400 NAND, 7432 OR, 7402 NOR) y regulación analógica mediante divisores de voltaje.</p>
-                </div>
-                <div class="context-item">
-                    <h4>Modelado 3D (Blender), Realidad Aumentada y Costos</h4>
-                    <p>Modelado 3D detallado de arquitectura interna de hardware (Motherboard) en Blender, despliegue de activos inmersivos por código QR en EasyAR, y modelado financiero de contabilidad de costos por procesos industriales.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN IMPRESIÓN 2: CONTEXTO DE CERTIFICADOS Y PREMIOS (Se oculta en web, aparece en el PDF impreso) -->
+        <!-- SECCIÓN IMPRESIÓN: CONTEXTO DE CERTIFICADOS Y PREMIOS (Se oculta en web, aparece al imprimir en lugar de los PDFs) -->
         <section class="print-only">
             <h2>Contexto de Certificaciones, Reconocimientos e Idiomas</h2>
             <ul class="cert-list">
@@ -416,14 +414,14 @@
         <section>
             <h2>Herramientas y Tecnologías</h2>
             <p style="margin: 0; font-size: 0.94em;">
-                <strong>Lenguajes y Desarrollo:</strong> Python (Flask, CustomTkinter, Matplotlib), Kotlin y Java (Android Studio), HTML5/CSS3/JS, Excel VBA, Prolog, SQL.<br>
+                <strong>Lenguajes, Frameworks y Bases de Datos:</strong> C#, ASP.NET Core (Razor Pages), Supabase, Python (Flask, CustomTkinter, Matplotlib), Kotlin y Java (Android Studio), HTML5/CSS3/JS, Excel VBA, Prolog, SQL.<br>
                 <strong>Infraestructura, Redes y Diseño:</strong> Switches y Routers Cisco, Cisco Packet Tracer, VirtualBox (Kali Linux, Docker), Git/GitHub, Render, Blender 3D, EasyAR, Power BI, Cursor, Instrumentación de Laboratorio (Osciloscopio Digital y Sat Finder).
             </p>
         </section>
 
         <!-- PIE DE PÁGINA EXCLUSIVO PARA EL PDF IMPRESO -->
         <div class="print-only print-footer">
-            Para consultar y descargar los certificados originales en PDF, visita la versión interactiva de este CV en: <strong>https://cv-greteltamara.onrender.com</strong>
+            Para consultar y descargar los certificados originales en PDF, visita la versión interactiva en: <strong>https://cv-greteltamara.onrender.com</strong>
         </div>
     </div>
 
