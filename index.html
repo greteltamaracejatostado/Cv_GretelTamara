@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Gretel Tamara Ceja Tostado</title>
     <style>
+        /* --- ESTILOS GENERALES Y DE PANTALLA --- */
         * {
             box-sizing: border-box;
         }
@@ -25,6 +26,7 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
         
+        /* Botón superior de impresión (Solo en pantalla) */
         .top-buttons {
             display: flex;
             justify-content: center;
@@ -43,6 +45,7 @@
         }
         .btn-print:hover { background-color: #2ecc71; }
 
+        /* Encabezado */
         header {
             display: flex;
             align-items: center;
@@ -85,6 +88,7 @@
             text-decoration: underline;
         }
 
+        /* Títulos de sección */
         h2 {
             color: #1a252f;
             font-size: 1.3em;
@@ -96,6 +100,7 @@
             letter-spacing: 0.5px;
         }
 
+        /* Tarjetas de Proyectos */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -127,6 +132,7 @@
             color: #4a5568;
         }
 
+        /* Etiqueta "En proceso" */
         .badge-proceso {
             background-color: #e67e22;
             color: #ffffff;
@@ -138,6 +144,7 @@
             letter-spacing: 0.5px;
         }
 
+        /* Bloques de experiencia práctica (Visibles en web y en PDF) */
         .context-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -162,8 +169,7 @@
             color: #4a5568;
         }
 
-
-
+        /* Lista de descargas PDF (Solo en pantalla) */
         .pdf-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -187,8 +193,7 @@
             border-color: #94a3b8;
         }
 
-
-
+        /* Lista de contexto de certificaciones (Solo en impresión) */
         .cert-list {
             margin: 8px 0 0 0;
             padding-left: 20px;
@@ -202,15 +207,13 @@
             display: none;
         }
 
-
-
+        /* Responsivo para celulares */
         @media (max-width: 650px) {
             header { flex-direction: column; text-align: center; }
             .projects-grid, .context-grid { grid-template-columns: 1fr; }
         }
 
-
-
+        /* --- ESTILOS EXCLUSIVOS PARA IMPRESIÓN / GUARDAR PDF --- */
         @media print {
             @page {
                 size: letter;
@@ -284,15 +287,13 @@
 </head>
 <body>
 
-
-
+    <!-- Botón de impresión (Solo visible en la página web) -->
     <div class="top-buttons no-print">
         <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
     </div>
 
     <div class="container">
-
-
+        <!-- ENCABEZADO -->
         <header>
             <img src="gretelfoto.png" alt="Gretel Tamara Ceja Tostado" class="profile-pic">
             <div>
@@ -306,13 +307,13 @@
             </div>
         </header>
 
-
-
+        <!-- PERFIL PROFESIONAL -->
         <section>
             <h2>Perfil Profesional</h2>
-            <p style="margin: 0;">Estudiante de 7mo semestre de Ingeniería en Tecnologías de la Información y Comunicaciones con perfil multidisciplinario. Cuento con experiencia práctica en análisis y arquitectura de bases de datos, desarrollo de software full-stack y móvil (C#, ASP.NET Core, Python, Kotlin, Java, VBA), ciberseguridad, configuración física y lógica de redes empresariales (Cisco), telecomunicaciones y diseño interactivo UI/UX y 3D. Destaco por mi liderazgo en equipos técnicos, enfoque metódico en la resolución de problemas y constante actualización tecnológica.</p>
+            <p style="margin: 0;">Estudiante de 7mo semestre de Ingeniería en Tecnologías de la Información y Comunicaciones con perfil multidisciplinario. Cuento con experiencia práctica en análisis y arquitectura de bases de datos, desarrollo de software full-stack y móvil (C#, ASP.NET Core, Python, Kotlin, Java, VBA), ciberseguridad y configuración física y lógica de redes empresariales (Cisco) —mejorando mi estudio en esta área—, telecomunicaciones y diseño interactivo UI/UX y 3D. Destaco por mi liderazgo en equipos técnicos, enfoque metódico en la resolución de problemas y constante actualización tecnológica.</p>
         </section>
 
+        <!-- PROYECTOS DE SOFTWARE DESTACADOS (Visible en web y en impresión) -->
         <section>
             <h2>Proyectos de Software Destacados</h2>
             <div class="projects-grid">
@@ -335,11 +336,6 @@
                     <h3>Sistema "Cecy Court Stylists"</h3>
                     <p>Sistema automatizado para control administrativo, gestión de inventarios, registro de ventas y generación dinámica de recibos en PDF mediante formularios avanzados (UserForms) y macros en Excel VBA.</p>
                 </div>
-
-                <div class="project-card">
-                    <h3>Transporte de Cargas México (DDoS Sim)</h3>
-                    <p>Software de cotización logística desarrollado en Python con <em>threading</em>, CustomTkinter y Matplotlib para recrear de forma controlada ataques DDoS e inyección de pop-ups, evaluando la seguridad en interfaces.</p>
-                </div>
                 
                 <div class="project-card">
                     <h3>Grety (GretelMyInternet) <span class="badge-proceso">En proceso</span></h3>
@@ -348,6 +344,7 @@
             </div>
         </section>
 
+        <!-- EXPERIENCIA PRÁCTICA Y LABORATORIOS DE INGENIERÍA (Visible tanto en la página web como en el PDF impreso) -->
         <section>
             <h2>Experiencia Práctica y Desarrollo en Ingeniería</h2>
             <div class="context-grid">
@@ -370,6 +367,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN WEB: DESCARGA DE PDFS (Se muestra en pantalla, se oculta al imprimir) -->
         <section id="certificados-seccion" class="no-print">
             <h2>Certificados y Evidencias (Documentos PDF)</h2>
             <p style="margin-top: 0; font-size: 0.92em; color: #555;"><em>Haz clic en cualquier documento para visualizar o descargar el archivo PDF original:</em></p>
@@ -383,6 +381,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN IMPRESIÓN: CONTEXTO DE CERTIFICADOS Y PREMIOS (Se oculta en web, aparece al imprimir en lugar de los PDFs) -->
         <section class="print-only">
             <h2>Contexto de Certificaciones, Reconocimientos e Idiomas</h2>
             <ul class="cert-list">
@@ -394,16 +393,16 @@
             </ul>
         </section>
 
+        <!-- HERRAMIENTAS Y TECNOLOGÍAS -->
         <section>
             <h2>Herramientas y Tecnologías</h2>
             <p style="margin: 0; font-size: 0.94em;">
-                <strong>Lenguajes, Frameworks y Bases de Datos:</strong> C#, ASP.NET Core (Razor Pages), Supabase, Python (Flask, CustomTkinter, Matplotlib), Kotlin y Java (Android Studio), HTML5/CSS3/JS, Excel VBA, Prolog, SQL.<br>
+                <strong>Lenguajes, Frameworks y Bases de Datos:</strong> C#, ASP.NET Core (Razor Pages), Supabase, Python (Flask), Kotlin y Java (Android Studio), HTML5/CSS3/JS, Excel VBA, Prolog, SQL.<br>
                 <strong>Infraestructura, Redes y Diseño:</strong> Switches y Routers Cisco, Cisco Packet Tracer, VirtualBox (Kali Linux, Docker), Git/GitHub, Render, Blender 3D, EasyAR, Power BI, Cursor, Instrumentación de Laboratorio (Osciloscopio Digital y Sat Finder).
             </p>
         </section>
 
-
-
+        <!-- PIE DE PÁGINA EXCLUSIVO PARA EL PDF IMPRESO -->
         <div class="print-only print-footer">
             Para consultar y descargar los certificados originales en PDF, visita la versión interactiva en: <strong>https://cv-greteltamara.onrender.com</strong>
         </div>
